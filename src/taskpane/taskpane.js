@@ -290,6 +290,13 @@ function startRename(id, nameEl) {
 }
 
 // ── Modal nuevo grupo ─────────────────────────────────────────
+function showRemoveModal() {
+  document.getElementById('remove-overlay').classList.remove('hidden');
+}
+function hideRemoveModal() {
+  document.getElementById('remove-overlay').classList.add('hidden');
+}
+
 function showModal() {
   selColor = COLORS[0];
   document.getElementById('inp-name').value = '';
@@ -319,6 +326,32 @@ function setupListeners() {
   document.getElementById('btn-refresh').onclick   = async () => {
     await refreshSheets(); renderAll(); highlightActive();
   };
+
+  // Menú tres puntos
+  document.getElementById('btn-dots').addEventListener('click', e => {
+    e.stopPropagation();
+    document.getElementById('dots-menu').classList.toggle('hidden');
+  });
+  document.getElementById('dots-refresh').addEventListener('click', async () => {
+    document.getElementById('dots-menu').classList.add('hidden');
+    await refreshSheets(); renderAll(); highlightActive();
+  });
+  document.getElementById('dots-clear').addEventListener('click', () => {
+    document.getElementById('dots-menu').classList.add('hidden');
+    if (confirm('¿Borrar todos los grupos?\n(Las hojas no se eliminarán)')) {
+      groups = [];
+      saveGroups(); applyTabColors(); renderAll();
+    }
+  });
+  document.getElementById('dots-remove').addEventListener('click', () => {
+    document.getElementById('dots-menu').classList.add('hidden');
+    showRemoveModal();
+  });
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.dots-wrapper')) {
+      document.getElementById('dots-menu').classList.add('hidden');
+    }
+  });
   document.getElementById('btn-save').onclick = () => {
     const name = document.getElementById('inp-name').value.trim();
     if (!name) { document.getElementById('inp-name').focus(); return; }
@@ -331,6 +364,10 @@ function setupListeners() {
   });
   document.getElementById('modal-overlay').addEventListener('click', e => {
     if (e.target === document.getElementById('modal-overlay')) hideModal();
+  });
+  document.getElementById('btn-close-remove').addEventListener('click', hideRemoveModal);
+  document.getElementById('remove-overlay').addEventListener('click', e => {
+    if (e.target === document.getElementById('remove-overlay')) hideRemoveModal();
   });
   document.addEventListener('click', e => {
     if (!e.target.closest('#ctx-menu')) hideCtx();

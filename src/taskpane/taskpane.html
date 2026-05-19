@@ -12,6 +12,16 @@
     <span class="topbar-title">Grupos de Hojas</span>
     <button id="btn-refresh" class="btn-icon" title="Actualizar lista">&#x21BA;</button>
     <button id="btn-new-group" class="btn-new">+ Grupo</button>
+    <div class="dots-wrapper">
+      <button id="btn-dots" class="btn-icon btn-dots" title="Más opciones">&#8942;</button>
+      <div id="dots-menu" class="dots-menu hidden">
+        <div class="dots-item" id="dots-refresh">&#x21BA; Actualizar hojas</div>
+        <div class="dots-divider"></div>
+        <div class="dots-item dots-danger" id="dots-clear">&#x1F5D1; Borrar todos los grupos</div>
+        <div class="dots-divider"></div>
+        <div class="dots-item dots-remove" id="dots-remove">&#x2715; Eliminar complemento</div>
+      </div>
+    </div>
   </div>
   <div id="groups-container"></div>
   <div id="ungrouped-section" style="display:none">
@@ -31,6 +41,25 @@
     <div class="modal-actions">
       <button id="btn-cancel" class="btn-secondary">Cancelar</button>
       <button id="btn-save"   class="btn-primary">Crear</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal eliminar complemento -->
+<div id="remove-overlay" class="hidden">
+  <div class="modal">
+    <div class="modal-remove-title">&#x2715; Eliminar complemento</div>
+    <div class="remove-steps">
+      <b>En Excel Online (navegador):</b><br>
+      1. Cierra este panel<br>
+      2. Haz clic derecho en el botón <b>"Grupos de Hojas"</b> de la cinta<br>
+      3. Selecciona <b>"Quitar complemento"</b><br><br>
+      <b>Si no aparece esa opción:</b><br>
+      1. Ve a <b>Insertar → Complementos</b><br>
+      2. Busca <b>"Grupos de Hojas"</b> → clic derecho → <b>Quitar</b>
+    </div>
+    <div class="modal-actions">
+      <button id="btn-close-remove" class="btn-primary">Entendido</button>
     </div>
   </div>
 </div>

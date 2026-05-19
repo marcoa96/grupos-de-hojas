@@ -65,3 +65,19 @@ body{font-family:'Segoe UI',sans-serif;font-size:13px;color:#222;background:#f3f
 .btn-secondary{background:#fff;color:#333;border:1px solid #ccc;border-radius:4px;padding:6px 14px;cursor:pointer;font-size:12px}
 .btn-secondary:hover{background:#f5f5f5}
 .hidden{display:none!important}
+
+/* Menú tres puntos */
+.dots-wrapper{position:relative}
+.btn-dots{font-size:18px;padding:2px 6px;color:#888}
+.btn-dots:hover{color:#333}
+.dots-menu{position:absolute;right:0;top:100%;background:#fff;border:1px solid #ddd;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:200;min-width:200px;overflow:hidden;margin-top:4px}
+.dots-item{padding:9px 14px;cursor:pointer;font-size:12px;color:#333;white-space:nowrap}
+.dots-item:hover{background:#f5f5f5}
+.dots-danger{color:#d32f2f}
+.dots-remove{color:#217346;font-weight:600}
+.dots-divider{border-top:1px solid #eee;margin:2px 0}
+
+/* Modal eliminar */
+.modal-remove-title{font-size:15px;font-weight:700;margin-bottom:10px;color:#d32f2f}
+.remove-steps{font-size:12px;color:#444;line-height:1.9;margin:10px 0}
+.remove-steps b{color:#1a3c27}

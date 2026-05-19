@@ -20,6 +20,7 @@ Office.onReady(async info => {
   await refreshSheets();
   renderAll();
   highlightActive();
+  await applyTabColors();
 
   // Eventos del libro
   await Excel.run(async ctx => {
@@ -109,6 +110,26 @@ async function highlightActive() {
   } catch(_) {}
 }
 
+// ── Colores en pestañas inferiores ────────────────────────────
+async function applyTabColors() {
+  try {
+    await Excel.run(async ctx => {
+      const ws = ctx.workbook.worksheets;
+      ws.load('items/name');
+      await ctx.sync();
+
+      // Mapa: nombre de hoja → color del grupo
+      const colorMap = {};
+      groups.forEach(g => g.sheets.forEach(n => { colorMap[n] = g.color; }));
+
+      ws.items.forEach(sheet => {
+        sheet.tabColor = colorMap[sheet.name] || '';
+      });
+      await ctx.sync();
+    });
+  } catch(_) {}
+}
+
 // ── Operaciones de grupos ─────────────────────────────────────
 function createGroup(name, color) {
   groups.push({ id: 'g' + Date.now(), name, color, collapsed: false, sheets: [] });
@@ -117,7 +138,7 @@ function createGroup(name, color) {
 
 function deleteGroup(id) {
   groups = groups.filter(g => g.id !== id);
-  saveGroups(); renderAll();
+  saveGroups(); applyTabColors(); renderAll();
 }
 
 function renameGroup(id, name) {
@@ -134,12 +155,12 @@ function addToGroup(sheetName, groupId) {
   groups.forEach(g => { g.sheets = g.sheets.filter(s => s !== sheetName); });
   const g = groups.find(g => g.id === groupId);
   if (g && !g.sheets.includes(sheetName)) g.sheets.push(sheetName);
-  saveGroups(); renderAll();
+  saveGroups(); applyTabColors(); renderAll();
 }
 
 function removeFromGroup(sheetName) {
   groups.forEach(g => { g.sheets = g.sheets.filter(s => s !== sheetName); });
-  saveGroups(); renderAll();
+  saveGroups(); applyTabColors(); renderAll();
 }
 
 // ── Render principal ──────────────────────────────────────────

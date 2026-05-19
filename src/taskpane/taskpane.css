@@ -1,0 +1,67 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',sans-serif;font-size:13px;color:#222;background:#f3f3f3;overflow-x:hidden}
+
+/* Barra superior */
+.topbar{display:flex;align-items:center;gap:6px;padding:8px;background:#fff;border-bottom:1px solid #ddd;position:sticky;top:0;z-index:100}
+.topbar-title{font-weight:700;font-size:13px;flex:1;color:#1a3c27}
+.btn-new{background:#217346;color:#fff;border:none;border-radius:4px;padding:4px 10px;cursor:pointer;font-size:12px;font-weight:600;white-space:nowrap}
+.btn-new:hover{background:#185c39}
+.btn-icon{background:none;border:none;cursor:pointer;color:#888;font-size:16px;padding:2px 5px;line-height:1}
+.btn-icon:hover{color:#333}
+
+/* Grupos */
+#groups-container{padding:6px}
+.group{background:#fff;border-radius:6px;border:1px solid #e0e0e0;margin-bottom:6px;overflow:hidden}
+.group-header{display:flex;align-items:center;gap:6px;padding:8px;border-left:4px solid transparent;cursor:pointer;user-select:none}
+.group-header:hover{background:#fafafa}
+.chevron{font-size:9px;color:#aaa;width:10px;flex-shrink:0}
+.color-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.group-name{font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.g-count{color:#aaa;font-size:11px;flex-shrink:0}
+.btn-del-group{background:none;border:none;cursor:pointer;color:#ccc;font-size:17px;padding:0 2px;line-height:1;flex-shrink:0}
+.btn-del-group:hover{color:#d32f2f}
+
+/* Hojas dentro del grupo */
+.sheets-list{border-top:1px solid #f0f0f0}
+.sheets-list.drag-over{background:#e8f5e9;outline:2px dashed #217346;outline-offset:-2px}
+.collapsed{display:none}
+
+/* Ítems de hoja */
+.sheet-item{display:flex;align-items:center;padding:6px 10px 6px 30px;cursor:pointer;font-size:12px;user-select:none;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sheet-item:hover{background:#f0f7f2}
+.sheet-item.active{background:#d6ede0;font-weight:700;color:#155724}
+
+/* Sección sin grupo */
+#ungrouped-section{margin:0 6px 6px;background:#fff;border-radius:6px;border:1px solid #e0e0e0;overflow:hidden}
+.section-label{padding:6px 10px;font-size:10px;font-weight:700;letter-spacing:.6px;color:#aaa;background:#fafafa;border-bottom:1px solid #f0f0f0}
+
+/* Rename inline */
+.rename-input{font-weight:600;font-size:13px;border:1px solid #217346;border-radius:3px;padding:1px 5px;flex:1;outline:none;min-width:0}
+
+/* Menú contextual */
+#ctx-menu{position:fixed;background:#fff;border:1px solid #ddd;border-radius:6px;box-shadow:0 4px 14px rgba(0,0,0,.18);z-index:1000;min-width:170px;overflow:hidden}
+#ctx-menu ul{list-style:none;padding:4px 0}
+.ctx-label{padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.5px;color:#aaa;text-transform:uppercase}
+.ctx-item{padding:7px 14px;cursor:pointer;font-size:12px;display:flex;align-items:center;gap:7px}
+.ctx-item:hover{background:#f5f5f5}
+.ctx-danger{color:#d32f2f}
+.ctx-divider{border-top:1px solid #eee;margin:3px 0}
+
+/* Modal */
+#modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;z-index:500}
+#modal-overlay.hidden{display:none}
+.modal{background:#fff;border-radius:8px;padding:20px;width:260px;box-shadow:0 8px 28px rgba(0,0,0,.22)}
+.modal-title{font-size:15px;font-weight:700;margin-bottom:14px;color:#1a3c27}
+.field-label{display:block;font-size:11px;font-weight:600;color:#666;margin-bottom:4px;margin-top:10px}
+.modal input{width:100%;padding:7px 10px;border:1px solid #ddd;border-radius:4px;font-size:13px;outline:none}
+.modal input:focus{border-color:#217346}
+#color-picker{display:flex;gap:7px;flex-wrap:wrap;margin-top:4px}
+.swatch{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .1s}
+.swatch:hover{transform:scale(1.2)}
+.swatch.selected{border-color:#333;transform:scale(1.2)}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.btn-primary{background:#217346;color:#fff;border:none;border-radius:4px;padding:6px 14px;cursor:pointer;font-size:12px;font-weight:600}
+.btn-primary:hover{background:#185c39}
+.btn-secondary{background:#fff;color:#333;border:1px solid #ccc;border-radius:4px;padding:6px 14px;cursor:pointer;font-size:12px}
+.btn-secondary:hover{background:#f5f5f5}
+.hidden{display:none!important}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+           xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+           xsi:type="TaskPaneApp">
+  <Id>a5d7f8b2-3c4e-4f1a-9b6d-2e8f0c1a3d5e</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>GruposDeHojas</ProviderName>
+  <DefaultLocale>es-ES</DefaultLocale>
+  <DisplayName DefaultValue="Grupos de Hojas"/>
+  <Description DefaultValue="Agrupa hojas como pestañas del navegador"/>
+  <IconUrl DefaultValue="http://localhost:3000/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="http://localhost:3000/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="http://localhost:3000"/>
+  <AppDomains>
+    <AppDomain>http://localhost:3000</AppDomain>
+  </AppDomains>
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+  <DefaultSettings>
+    <SourceLocation DefaultValue="http://localhost:3000/src/taskpane/taskpane.html"/>
+  </DefaultSettings>
+  <Permissions>ReadWriteDocument</Permissions>
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+                    xsi:type="VersionOverridesV1_0">
+    <Hosts>
+      <Host xsi:type="Workbook">
+        <DesktopFormFactor>
+          <GetStarted>
+            <Title resid="GetStarted.Title"/>
+            <Description resid="GetStarted.Description"/>
+            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+          </GetStarted>
+          <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            <OfficeTab id="TabHome">
+              <Group id="CommandsGroup">
+                <Label resid="CommandsGroup.Label"/>
+                <Icon>
+                  <bt:Image size="16" resid="Icon.16x16"/>
+                  <bt:Image size="32" resid="Icon.32x32"/>
+                  <bt:Image size="80" resid="Icon.80x80"/>
+                </Icon>
+                <Control xsi:type="Button" id="TaskpaneButton">
+                  <Label resid="TaskpaneButton.Label"/>
+                  <Supertip>
+                    <Title resid="TaskpaneButton.Label"/>
+                    <Description resid="TaskpaneButton.Tooltip"/>
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Icon.16x16"/>
+                    <bt:Image size="32" resid="Icon.32x32"/>
+                    <bt:Image size="80" resid="Icon.80x80"/>
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>ButtonId1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url"/>
+                  </Action>
+                </Control>
+              </Group>
+            </OfficeTab>
+          </ExtensionPoint>
+        </DesktopFormFactor>
+      </Host>
+    </Hosts>
+    <Resources>
+      <bt:Images>
+        <bt:Image id="Icon.16x16" DefaultValue="http://localhost:3000/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="http://localhost:3000/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="http://localhost:3000/assets/icon-80.png"/>
+      </bt:Images>
+      <bt:Urls>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="http://localhost:3000"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="http://localhost:3000/src/taskpane/taskpane.html"/>
+      </bt:Urls>
+      <bt:ShortStrings>
+        <bt:String id="GetStarted.Title" DefaultValue="Grupos de Hojas"/>
+        <bt:String id="CommandsGroup.Label" DefaultValue="Grupos de Hojas"/>
+        <bt:String id="TaskpaneButton.Label" DefaultValue="Grupos de Hojas"/>
+      </bt:ShortStrings>
+      <bt:LongStrings>
+        <bt:String id="GetStarted.Description" DefaultValue="Agrupa tus hojas como pestañas."/>
+        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Abre el panel de grupos de hojas."/>
+      </bt:LongStrings>
+    </Resources>
+  </VersionOverrides>
+</OfficeApp>

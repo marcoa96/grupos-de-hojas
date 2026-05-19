@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+  <title>Grupos de Hojas</title>
+  <link rel="stylesheet" href="taskpane.css"/>
+</head>
+<body>
+<div id="app">
+  <div class="topbar">
+    <span class="topbar-title">Grupos de Hojas</span>
+    <button id="btn-refresh" class="btn-icon" title="Actualizar lista">&#x21BA;</button>
+    <button id="btn-new-group" class="btn-new">+ Grupo</button>
+  </div>
+  <div id="groups-container"></div>
+  <div id="ungrouped-section" style="display:none">
+    <div class="section-label">SIN GRUPO</div>
+    <div id="ungrouped-list"></div>
+  </div>
+</div>
+
+<!-- Modal nuevo grupo -->
+<div id="modal-overlay" class="hidden">
+  <div class="modal">
+    <div class="modal-title">Nuevo Grupo</div>
+    <label class="field-label">Nombre</label>
+    <input id="inp-name" type="text" placeholder="Ej: Ventas" autocomplete="off"/>
+    <label class="field-label">Color</label>
+    <div id="color-picker"></div>
+    <div class="modal-actions">
+      <button id="btn-cancel" class="btn-secondary">Cancelar</button>
+      <button id="btn-save"   class="btn-primary">Crear</button>
+    </div>
+  </div>
+</div>
+
+<!-- Menú contextual -->
+<div id="ctx-menu" class="hidden">
+  <ul id="ctx-list"></ul>
+</div>
+
+<script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+<script src="taskpane.js"></script>
+</body>
+</html>

@@ -10,17 +10,17 @@
   <DefaultLocale>es-ES</DefaultLocale>
   <DisplayName DefaultValue="Grupos de Hojas"/>
   <Description DefaultValue="Agrupa hojas como pestañas del navegador"/>
-  <IconUrl DefaultValue="http://localhost:3000/assets/icon-32.png"/>
-  <HighResolutionIconUrl DefaultValue="http://localhost:3000/assets/icon-80.png"/>
-  <SupportUrl DefaultValue="http://localhost:3000"/>
+  <IconUrl DefaultValue="https://marcoa96.github.io/grupos-de-hojas/assets/icon-32.png"/>
+  <HighResolutionIconUrl DefaultValue="https://marcoa96.github.io/grupos-de-hojas/assets/icon-80.png"/>
+  <SupportUrl DefaultValue="https://marcoa96.github.io/grupos-de-hojas"/>
   <AppDomains>
-    <AppDomain>http://localhost:3000</AppDomain>
+    <AppDomain>https://marcoa96.github.io</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Workbook"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="http://localhost:3000/src/taskpane/taskpane.html"/>
+    <SourceLocation DefaultValue="https://marcoa96.github.io/grupos-de-hojas/src/taskpane/taskpane.html"/>
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
@@ -66,13 +66,13 @@
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="http://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="http://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="http://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Icon.16x16" DefaultValue="https://marcoa96.github.io/grupos-de-hojas/assets/icon-16.png"/>
+        <bt:Image id="Icon.32x32" DefaultValue="https://marcoa96.github.io/grupos-de-hojas/assets/icon-32.png"/>
+        <bt:Image id="Icon.80x80" DefaultValue="https://marcoa96.github.io/grupos-de-hojas/assets/icon-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="http://localhost:3000"/>
-        <bt:Url id="Taskpane.Url" DefaultValue="http://localhost:3000/src/taskpane/taskpane.html"/>
+        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://marcoa96.github.io/grupos-de-hojas"/>
+        <bt:Url id="Taskpane.Url" DefaultValue="https://marcoa96.github.io/grupos-de-hojas/src/taskpane/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="GetStarted.Title" DefaultValue="Grupos de Hojas"/>
